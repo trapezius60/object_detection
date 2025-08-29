@@ -8,7 +8,7 @@ from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 import time
 
 # ------------------- Page Config -------------------
-st.set_page_config(page_title="Object Detection App", page_icon="🤕", layout="wide")
+st.set_page_config(page_title="Object Detection App", page_icon="🔎", layout="wide")
 
 # ------------------- Header -------------------
 st.markdown(
