@@ -34,18 +34,29 @@ wound_descriptions = {
 
 # ------------------- Load Model -------------------
 
+# Dictionary of models with names
 MODEL_OPTIONS = {
-    "General object detection1 (YOLOv8x-OIV7 – 600 Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
-    "General object detection2 (YOLOv8x-COCO - 80 classes Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-COCO/resolve/main/yolov8x.pt",
-    "Forensic Wound Detection (YOLO8)": "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
+    "General object detection 1 (YOLOv8x-OIV7 – 600 Objects Detection)": 
+        "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
+    
+    "General object detection 2 (YOLOv8x-COCO - 80 classes Objects Detection)": 
+        "https://huggingface.co/trapezius60/yolov8x-COCO/resolve/main/yolov8x.pt",
+    
+    "Forensic Wound Detection (YOLO8)": 
+        "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 }
-selected_model = st.selectbox("Choose Detection Model", list(MODEL_OPTIONS.keys()))
 
-@st.cache_resource
-def load_model(model_url):
-    return YOLO(model_url)
+# UI dropdown to choose model
+selected_model_name = st.selectbox("Choose a model:", list(MODEL_OPTIONS.keys()))
 
-model = load_model(MODEL_OPTIONS[selected_model])
+# Load the model only when selected
+@st.cache_resource  # Prevents reloading every run
+def load_model(model_path):
+    return YOLO(model_path)
+
+model = load_model(MODEL_OPTIONS[selected_model_name])
+
+st.success(f"✅ Loaded model: {selected_model_name}")
 
 # ------------------- Confidence Slider -------------------
 conf_thresh = st.slider("Confidence threshold", 0.0, 1.0, 0.25, 0.05)
