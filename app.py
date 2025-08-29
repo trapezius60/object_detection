@@ -46,15 +46,14 @@ MODEL_OPTIONS = {
         "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 }
 
-# UI dropdown to choose model
-selected_model_name = st.selectbox("Choose a model:", list(MODEL_OPTIONS.keys()))
+selected_model_name = st.selectbox("Choose Detection Model", list(MODEL_OPTIONS.keys()))
+model_url = MODEL_OPTIONS[selected_model_name]
 
-# Load the model only when selected
-@st.cache_resource  # Prevents reloading every run
-def load_model(model_path):
-    return YOLO(model_path)
+# ------------------- Load Model -------------------
+@st.cache_resource
+def load_model(model_url):
+    return YOLO(model_url)
 
-model = load_model(MODEL_OPTIONS[selected_model_name])
 
 st.success(f"✅ Loaded model: {selected_model_name}")
 
