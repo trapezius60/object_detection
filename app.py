@@ -39,20 +39,14 @@ MODEL_OPTIONS = {
     "Forensic Wound Detection (YOLOv8)": "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 }
 
-selected_model_name = st.selectbox("Choose Detection Model", list(MODEL_OPTIONS.keys()))
-model_url = MODEL_OPTIONS[selected_model_name]
+# ------------------- Model Selector -------------------
+selected_model = st.selectbox("Select Detection Model", list(MODEL_OPTIONS.keys()))
 
-# ------------------- Load Model -------------------
 @st.cache_resource
 def load_model(model_url):
-    try:
-        model = YOLO(model_url)
-        return model
-    except Exception as e:
-        st.error(f"❌ Failed to load model: {e}")
-        return None
+    return YOLO(model_url)
 
-model = load_model(model_url)
+model = load_model(MODEL_OPTIONS[selected_model])
 
 
 # ------------------- Confidence Slider -------------------
