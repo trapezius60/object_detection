@@ -23,9 +23,7 @@ st.write("Upload an image or use your webcam for live detection")
 
 MODEL_OPTIONS = {
     "YOLOv8x (OIV7 – 600 Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
-    "YOLO11x-seg (Object segmentation)": "https://huggingface.co/trapezius60/yolov11x-seg7/resolve/main/yolov11x-seg.pt",
-    "YOLO11x (Object Detection)": "https://huggingface.co/trapezius60/yolov11x/resolve/main/yolov11x.pt"
-}
+    "YOLO8-wound-detection (Forensic Wound Detection)": "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 
 selected_model = st.selectbox("Choose Detection Model", list(MODEL_OPTIONS.keys()))
 
