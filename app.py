@@ -39,9 +39,6 @@ MODEL_OPTIONS = {
     "General object detection 1 (YOLOv8x-OIV7 – 600 Objects Detection)": 
         "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
     
-    "General object detection 2 (YOLOv8x-COCO - 80 classes Objects Detection)": 
-        "https://huggingface.co/trapezius60/yolov8x-COCO/resolve/main/yolov8x.pt",
-    
     "Forensic Wound Detection (YOLO8)": 
         "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 }
