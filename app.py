@@ -35,9 +35,8 @@ wound_descriptions = {
 # ------------------- Load Model -------------------
 
 MODEL_OPTIONS = {
-    "General object detection (YOLOv8x-OIV7 – 600 Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
-    "Segmental object detection (YOLOv8x-segmental Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-seg/resolve/main/yolov8x-seg.pt",
-    "Image Classification (YOLOv8x-cls)": "https://huggingface.co/trapezius60/yolov8x-cls/resolve/main/yolov8x-cls.pt",
+    "General object detection1 (YOLOv8x-OIV7 – 600 Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
+    "General object detection2 (YOLOv8x-COCO - 80 classes Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-COCO/resolve/main/yolov8x.pt",
     "Forensic Wound Detection (YOLO8)": "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 }
 selected_model = st.selectbox("Choose Detection Model", list(MODEL_OPTIONS.keys()))
@@ -137,7 +136,7 @@ st.markdown("---")
 st.markdown(
     f"""
     <div style='text-align:center; font-size:14px; color:gray;'>
-        Object Detection Version: 1.0.0 | © 2025 BH <br>
+        Object Detection Version: 1.1.0 | © 2025 BH <br>
         <div>
             <a href="https://docs.google.com/document/d/18KlYv7Xbp3Y4Snatfez_jff0OW7DWKPoYP3HA3fx2cQ/edit?usp=sharing" target="_blank">📄 User Manual</a> | 
             <a href="https://forms.gle/WgGnkcUQPafyhmng8" target="_blank">👍 Feedback Please</a>
