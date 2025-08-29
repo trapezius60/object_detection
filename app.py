@@ -13,7 +13,7 @@ st.set_page_config(page_title="Object Detection App", page_icon="🤕", layout="
 # ------------------- Header -------------------
 st.markdown(
     """
-    <h1 style='text-align: center;'>🔎 Object Detection by yolov8x-oiv7 </h1>
+    <h1 style='text-align: center;'>🔎 Object Detection</h1>
     """,
     unsafe_allow_html=True
 )
@@ -35,8 +35,8 @@ wound_descriptions = {
 # ------------------- Load Model -------------------
 
 MODEL_OPTIONS = {
-    "YOLOv8x (OIV7 – 600 Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
-    "YOLO8-wound-detection (Forensic Wound Detection)": "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
+    "General object detection (YOLOv8x-OIV7 – 600 Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
+    "Forensic Wound Detection (YOLO8)": "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 }
 selected_model = st.selectbox("Choose Detection Model", list(MODEL_OPTIONS.keys()))
 
