@@ -13,7 +13,7 @@ st.set_page_config(page_title="Object Detection App", page_icon="🤕", layout="
 # ------------------- Header -------------------
 st.markdown(
     """
-    <h1 style='text-align: center;'>🤕 Object Detection by yolov8x-oiv7 🔎</h1>
+    <h1 style='text-align: center;'>🔎 Object Detection by yolov8x-oiv7 </h1>
     """,
     unsafe_allow_html=True
 )
