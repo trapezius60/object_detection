@@ -20,11 +20,20 @@ st.markdown(
 st.write("Upload an image or use your webcam for live detection")
 
 # ------------------- Load Model -------------------
-@st.cache_resource
-def load_model():
-    return YOLO("https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt")
 
-model = load_model()
+MODEL_OPTIONS = {
+    "YOLOv8x (OIV7 – 600 Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
+    "YOLO11x-seg (Object segmentation)": "https://huggingface.co/trapezius60/yolov11x-seg7/resolve/main/yolov11x-seg.pt",
+    "YOLO11x (Object Detection)": "https://huggingface.co/trapezius60/yolov11x/resolve/main/yolov11x.pt"
+}
+
+selected_model = st.selectbox("Choose Detection Model", list(MODEL_OPTIONS.keys()))
+
+@st.cache_resource
+def load_model(model_url):
+    return YOLO(model_url)
+
+model = load_model(MODEL_OPTIONS[selected_model])
 
 # ------------------- Confidence Slider -------------------
 conf_thresh = st.slider("Confidence threshold", 0.0, 1.0, 0.25, 0.05)
