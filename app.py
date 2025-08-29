@@ -71,7 +71,7 @@ if uploaded_file:
 
     # Show descriptions if available
     if detected_classes:
-        st.subheader("📝 Wound Type Descriptions")
+        st.subheader("📝 Detected Object Descriptions")
         desc_texts = []
         for cls in detected_classes:
             if cls in wound_descriptions:
@@ -137,8 +137,8 @@ st.markdown(
     <div style='text-align:center; font-size:14px; color:gray;'>
         Object Detection Version: 1.0.0 | © 2025 BH <br>
         <div>
-            <a href="https://docs.ultralytics.com/datasets/detect/open-images-v7/" target="_blank">📄 User Manual</a> |
-            <a href="https://www.ultralytics.com/glossary/object-detection" target="_blank">👍more about object detection</a>
+            <a href="https://docs.google.com/document/d/18KlYv7Xbp3Y4Snatfez_jff0OW7DWKPoYP3HA3fx2cQ/edit?usp=sharing" target="_blank">📄 User Manual</a> | 
+            <a href="https://forms.gle/WgGnkcUQPafyhmng8" target="_blank">👍 Feedback Please</a>
         </div>
     </div>
     """,
