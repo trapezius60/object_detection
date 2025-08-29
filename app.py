@@ -38,7 +38,6 @@ wound_descriptions = {
 MODEL_OPTIONS = {
     "General object detection 1 (YOLOv8x-OIV7 – 600 Objects Detection)": 
         "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
-    
     "Forensic Wound Detection (YOLO8)": 
         "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 }
