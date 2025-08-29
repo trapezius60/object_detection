@@ -36,6 +36,8 @@ wound_descriptions = {
 
 MODEL_OPTIONS = {
     "General object detection (YOLOv8x-OIV7 – 600 Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-oiv7/resolve/main/yolov8x-oiv7.pt",
+    "Segmental object detection (YOLOv8x-segmental Objects Detection)": "https://huggingface.co/trapezius60/yolov8x-seg/resolve/main/yolov8x-seg.pt",
+    "Image Classification (YOLOv8x-cls)": "https://huggingface.co/trapezius60/yolov8x-cls/resolve/main/yolov8x-cls.pt",
     "Forensic Wound Detection (YOLO8)": "https://huggingface.co/trapezius60/forensic_wound_detection/resolve/main/best.pt"
 }
 selected_model = st.selectbox("Choose Detection Model", list(MODEL_OPTIONS.keys()))
